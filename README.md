@@ -52,7 +52,7 @@ Answer: 8333
 Answer: Partition by tpep_dropoff_datetime and Cluster on VendorID
 ```
 CREATE OR REPLACE TABLE taxi-rides-ny.nytaxi.yellow_tripdata_partitoned_clustered
-PARTITION BY DATE(tpep_pickup_datetime)
+PARTITION BY DATE(tpep_dropoff_datetime)
 CLUSTER BY VendorID AS
 SELECT * FROM taxi-rides-ny.nytaxi.external_yellow_tripdata;
 ```
